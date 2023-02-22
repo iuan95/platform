@@ -1,0 +1,39 @@
+mixin icon(name,mod)
+	- mod = mod || ''
+	svg(class="icon icon-" + name + ' ' + mod)
+		use(xlink:href="/img/svg/sprite.svg#"+name)
+mixin iconas(name)
+	svg(class="icon icon-" + name + ' ' + name+"__style")
+		use(xlink:href="/img/svg/sprite1.svg#"+name)
+
+mixin icons(name,mod)
+	- mod = mod || ''
+	svg(class="icon icon-" + name + ' ' + mod)
+		use(xlink:href="/img/svg/sprite1.svg#"+name)
+
+
+
+//
+
+	mixin stateIconsheader(image,title,active:false)
+		.codetest
+			if active==true
+				.forcitizens__logo
+					+iconas(image)
+				span=title
+				i
+					+iconas('Vector1')
+			else
+				.forcitizens__logo
+					+iconas('G')
+				span='Для граждан'
+				i
+					+iconas('Vector1')
+			.forcitizens__menu
+				ul
+					li
+						a(href='#').state__icons=title
+	mixin abasblya
+		each ll in [{image: "G", title:"Для граждан", active:true},{image: "B", title: "Для бизнеса", active:false},{image: "И", title: "Для ИОГВ", active:false}, ]
+			.forcitizens1
+				+stateIconsheader(ll.image, ll.title, ll.active)

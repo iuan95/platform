@@ -1,0 +1,160 @@
+@import "mixins"
+@mixin font-d-1
+  font-weight: 500
+  font-size: 50px
+  line-height: 60px
+  @content
+@mixin font-t-1
+  font-weight: 500
+  font-size: 32px
+  line-height: 38px
+  @content
+@mixin font-m-1
+  font-weight: 500
+  font-size: 25px
+  line-height: 30px
+  @content
+@mixin l
+  @media screen and (max-width: 1080px)
+    @content
+@mixin m
+  @media screen and (max-width: 768px)
+    @content
+//
+  @include l
+    background-color: green
+//@include font-d-1
+    color: red
+  @include l
+    background-color: #2E3449
+    @include font-t-1
+      color: blue
+
+  @include m
+    @include font-m-1
+      color: rebeccapurple
+/*DEKSTOP*/
+.super__header
+  position: relative
+  background-image: url("../img/background.svg")
+  //background: #0A1A3A
+  background-repeat: no-repeat
+  background-position: bottom
+
+  background-size: 100vw 1100px
+  height: auto
+  padding-bottom: 20px
+  width: 100%
+  overflow: hidden
+
+.footer
+  width: 100%
+  margin-top: 100px
+  height: 433px
+  position: relative
+
+.footer__content
+  max-width: 1300px
+  margin: 0 auto
+.footer__icons
+  display: flex
+  justify-content: space-between
+  margin-bottom: 20px
+.footer__left__icons
+  display: flex
+  align-items: center
+  column-gap: 7.51px
+
+.footer__right__icons
+  display: flex
+  margin-top: 26px
+  column-gap: 27px
+  /*ЛОГОЛАР*/
+.logo7__style
+  width: 31px
+  height: 50px
+.telegram__style
+  width: 24px
+  height: 24px
+.vk__style
+  width: 24px
+  height: 24px
+.whatsapp__style
+  width: 24px
+  height: 24px
+
+.line__undericons
+  max-width: 1300px
+  height: 1px
+  background: #B8B4B4
+  margin-bottom: 50px
+
+.logofootertext__style
+  fill: #FFFFFF
+  width: 91.26px
+  height: 27.16px
+
+.logopl__style
+  width: 16px
+  height: 16px
+
+.footer__data
+  display: grid
+  grid-template-columns: repeat(4, 221px)
+  justify-content: space-between
+  margin-bottom: 50px
+
+.footer__info
+  span
+    @include D-h5
+      color: white
+
+  ul
+    margin-top: 22px
+    display: flex
+    flex-direction: column
+    row-gap: 16px
+    li
+      //font-family: 'Golos'
+      font-weight: 400
+      font-size: 14px
+      line-height: 17px
+      color: #B8B4B4
+      //font-style: normal
+.line__undericons1
+  max-width: 1300px
+  height: 1px
+  background: #B8B4B4
+  margin-bottom: 20px
+
+.footer__footer
+  display: flex
+  justify-content: space-between
+  margin-bottom: 20px
+  span.footer__footer__left
+    font-family: 'Golos'
+    font-style: normal
+    font-weight: 400
+    font-size: 14px
+    line-height: 17px
+    color: #B8B4B4
+  span.footer__footer__right
+    display: flex
+    gap: 8px
+    align-items: center
+    font-family: 'Golos'
+    font-style: normal
+    font-weight: 400
+    font-size: 14px
+    line-height: 17px
+    color: #B8B4B4
+    flex: none
+    order: 0
+    flex-grow: 0
+
+
+
+
+
+
+
