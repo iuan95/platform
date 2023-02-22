@@ -1,0 +1,113 @@
+header.header#header
+    nav.nav.container
+        ul.menu__header
+            li.header__logo
+                a(href="#").logo__img#logo-img
+                    +icon('logo', 'logo__icon')
+                .header__line
+                .logo__title
+                    +iconas('Logotext')
+            li.header__nav
+                form.search__form.search__form__mobile#search
+                    input(type="text" name="search" placeholder="Поиск").input__search
+                    button.botton__search#button-search(type="submit")
+                        i.icon__search
+                            +icon('search4', 'icon_search')
+                            //.icon__search
+                a.addvisual
+                    h4.text__ Версия для слабовидящих
+                    i.icon__
+                        img(src="img/akar-icons_glasses.svg").icon__glasses
+                        //+icons('akar-icons_glasses', 'icon__glasses')
+                a.profile.mobprofile
+                    img(src='img/profile.svg').profile-icon
+                .forcitizens1#forcitizens1
+        a.burger__menu
+            img(src='img/Меню.svg').menu__burger
+
+    nav.list__header
+        .container
+            ul.menu__list
+                +icons("menulisticon", 'menulisticon__style')
+                li.menu__items
+                    a(href="#") О НАС
+                li.menu__items
+                    a(href="#") УСЛУГИ
+                li.menu__items
+                    a(href="#") СПРАВОЧНИК
+                li.menu__items
+                    a(href="#") ПРЕСС-ЦЕНТР
+                li.menu__items
+                    a(href="#") ТЕХНИЧЕСКАЯ ПОДДЕРЖКА
+                li.menu__items
+                    a(href="#") ТЕЛЕФОННЫЙ СПРАВОЧНИК
+// Tablet
+header.header__tablet#header__tablet
+
+    nav.tablet__menu
+        .top__side
+            .tablet__logo
+                a.this_tablet__logo
+                    i
+                        +icon('logo', 'icon-logo__tablet')
+                .tablet__gap__line
+                a.this_tablet__text
+                    i
+                        +iconas('Logotext')
+            .tablet__nav
+                a.tablet__profile
+                    i
+                        img(src='img/profile.svg').tablet__profile__menu
+                a.tablet__menuburger.openorclose__menu
+                    img(src='img/Меню.svg')
+    .onclickmenu
+        nav.onclickmenu__nav
+            .onclickmenu__header
+                .onclickmenu__header--left
+                    .forcitizens2#forcitizens2
+                        .forcitizens2__logo
+                            img(src='./../img/G.svg').G__style
+                        span Для граждан
+                        .forcitizens2__vector
+                            img(src="./../img/Vector1.svg").Vector1__style
+
+                    a.addvisual.nohover#addvisual
+                        h4.text__ Версия для слабовидящих
+                        i.icon__
+                            img(src="img/akar-icons_glasses.svg").icon__glasses
+                .onclickmenu__header--right
+                    a.tablet__profile1
+                        img(src='img/profile.svg').tablet__profile__menu1
+                    i.tablet__closemenu.openorclose__menu
+                        +icon('closemenu', 'closemenu__style')
+            .onclickmenu__items
+                -
+                    datalinks = [{mylinkname: 'О НАС', mydata: ['О1 РЦИТ', 'Документы', 'Достижения', 'Вакансии', 'Штаб ЦТ', 'История РЦИТ', 'Политика РЦИТ', 'Реализованные проект'], visable: true},
+                        {mylinkname: 'УСЛУГИ', mydata: ['О2 РЦИТ', 'Документы', 'Достижения', 'Вакансии', 'Штаб ЦТ', 'История РЦИТ', 'Политика РЦИТ', 'Реализованные проект'], visable: false},
+                        {mylinkname: 'СПРАВОЧНИК', mydata: ['СПРАВОЧНИК', 'СПРАВОЧНИК', 'СПРАВОЧНИК', 'СПРАВОЧНИК', 'СПРАВОЧНИК', 'История РЦИТ', 'Политика РЦИТ', 'Реализованные проект'], visable: false},
+                        {mylinkname: 'ПРЕСС-ЦЕНТР', mydata: [ 'Штаб ЦТ', 'История РЦИТ', 'Политика РЦИТ', 'Реализованные проект'], visable: false},
+                        {mylinkname: 'ТЕХНИЧЕСКАЯ ПОДЕРЖКА', mydata: [ 'Достижения', 'Вакансии', 'Штаб ЦТ', 'История РЦИТ', ], visable: false},
+                        {mylinkname: 'ТЕЛЕФОННЫЙ СПРАВОЧНИК', mydata: ['ТЕЛЕФОННЫЙ СПРАВОЧНИК'], visable: false}]
+
+                mixin pushdata(kkk, lllm)
+                        .onclickmenu__item
+                            i#arrow-down__icon
+                                +icon('arrow-down', 'arrow-down__icon')
+                            a.onclickmenu__link= kkk
+                        .onclickmenu__item__container
+                            each ss in lllm
+                                .onclickmenu__item__container-link= ss
+                each kk in datalinks
+                    +pushdata(kk.mylinkname, kk.mydata)
+
+            .onclickmenu__nav__botton-line-container
+                .onclickmenu__nav__botton-line
+    .bottom__side
+        .container
+            form.tablet__search
+                input(type="text" name="search" placeholder="Поиск").this-tablet__search
+                button.tablet__button(type="submit")
+                    i.tablet__icon__search
+                        +icon('search4', 'icon-search__tablet')
+
+include main-contents/subheader
