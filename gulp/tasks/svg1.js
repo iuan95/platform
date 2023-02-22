@@ -1,7 +1,7 @@
 module.exports = function () {
 
     $.gulp.task('svg1', function () {
-        return $.gulp.src('src/static/img/qwe/*.svg') //хантан ыларым
+        return $.gulp.src('src/static/img/qwe/*.svg') 
             .pipe($.gp.svgSprite({
                 mode: {
                     symbol: {
